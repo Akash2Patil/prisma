@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://neondb_owner:npg_4QrDVyqu8EkI@ep-autumn-darkness-a76a6leo-pooler.ap-southeast-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+}
+
+// model is same as the sql query 
+// add "?" if you want to make the field optional
+model User{
+  id Int @id @default(autoincrement())
+  username String @unique
+  password String
+  firstname String
+  lastname String?
+}
+
+model Todo{
+  id Int @id @default(autoincrement())
+  title String
+  done Boolean @default(false)
+  description String?
+}
