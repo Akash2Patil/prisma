@@ -11,7 +11,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://neondb_owner:npg_4QrDVyqu8EkI@ep-autumn-darkness-a76a6leo-pooler.ap-southeast-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+  url      = "your url"
 }
 
 // model is same as the sql query 
